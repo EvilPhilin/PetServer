@@ -48,7 +48,7 @@ void TCPServer::addSession(tcp::socket&& connectionSocket)
 		{
 			sessions[i] = std::make_unique<TCPSession>(std::move(connectionSocket), sessions, i);
 
-			std::thread(&TCPSession::startSession, &(*(sessions[i]))).detach();
+			std::thread(&TCPSession::startSession, sessions[i].get()).detach();
 			return;
 		}
 	}
