@@ -18,7 +18,6 @@ private:
 	void readData();
 	void executeTask();
 	void sendResponse();
-	void performTask(boost::system::error_code ec, std::size_t received);
 	void closeSession();
 
 private:

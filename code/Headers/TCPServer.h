@@ -9,8 +9,8 @@
 class TCPServer
 {
 public:
-	void start();
 	TCPServer(std::shared_ptr<boost::asio::io_context> outerContext);
+	void start();
 
 private:
 	void doAccept();
